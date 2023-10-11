@@ -18,7 +18,7 @@
 		<servlet-name>controller</servlet-name>
 		<url-pattern>/controller</url-pattern>
 	</servlet-mapping>
-		<servlet>
+	<servlet>
 		<servlet-name>JSPerror</servlet-name>
 		<jsp-file>/jsp/error.jsp</jsp-file>
 	</servlet>
@@ -34,7 +34,7 @@
 		<servlet-name>JSPuserfindings</servlet-name>
 		<url-pattern>/findings</url-pattern>
 	</servlet-mapping>
-		<servlet>
+	<servlet>
 		<servlet-name>JSPmyuserfindings</servlet-name>
 		<jsp-file>/jsp/user_interface/myfindings.jsp</jsp-file>
 	</servlet>
@@ -42,7 +42,7 @@
 		<servlet-name>JSPmyuserfindings</servlet-name>
 		<url-pattern>/myfindings</url-pattern>
 	</servlet-mapping>
-		<servlet>
+	<servlet>
 		<servlet-name>JSPmyprofile</servlet-name>
 		<jsp-file>/jsp/user_interface/myprofile.jsp</jsp-file>
 	</servlet>
@@ -50,6 +50,6 @@
 		<servlet-name>JSPmyprofile</servlet-name>
 		<url-pattern>/myprofile</url-pattern>
 	</servlet-mapping>
-	
+
 
 </web-app>
