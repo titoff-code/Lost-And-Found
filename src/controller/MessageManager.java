@@ -4,9 +4,9 @@ import com.prutzkow.resourcer.ProjectResourcer;
 import com.prutzkow.resourcer.Resourcer;
 
 public class MessageManager {
-	private final static Resourcer resource =  ProjectResourcer.getInstance();
+	private final static Resourcer resource = ProjectResourcer.getInstance();
 
-// класс извлекает информацию из файла messages.properties
+	// РєР»Р°СЃСЃ РёР·РІР»РµРєР°РµС‚ РёРЅС„РѕСЂРјР°С†РёСЋ РёР· С„Р°Р№Р»Р° messages.properties
 	private MessageManager() {
 	}
 

@@ -2,13 +2,12 @@ package controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-
 public class EmptyCommand implements ActionCommand {
 	@Override
 	public String execute(HttpServletRequest request) {
 		/*
-		 * в случае ошибки или прямого обращения к контроллеру переадресация на страницу
-		 * ввода логина
+		 * РІ СЃР»СѓС‡Р°Рµ РѕС€РёР±РєРё РёР»Рё РїСЂСЏРјРѕРіРѕ РѕР±СЂР°С‰РµРЅРёСЏ Рє РєРѕРЅС‚СЂРѕР»Р»РµСЂСѓ РїРµСЂРµР°РґСЂРµСЃР°С†РёСЏ РЅР° СЃС‚СЂР°РЅРёС†Сѓ
+		 * РІРІРѕРґР° Р»РѕРіРёРЅР°
 		 */
 		String page = ConfigurationManager.getProperty("path.page.login");
 		return page;

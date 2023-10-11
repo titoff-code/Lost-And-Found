@@ -9,13 +9,15 @@ public class LoginCommand implements ActionCommand {
 	@Override
 	public String execute(HttpServletRequest request) {
 		String page = null;
-		// извлечение из запроса логина и пароля
+
+		// РёР·РІР»РµС‡РµРЅРёРµ РёР· Р·Р°РїСЂРѕСЃР° Р»РѕРіРёРЅР° Рё РїР°СЂРѕР»СЏ
 		String login = request.getParameter(PARAM_NAME_LOGIN);
 		String pass = request.getParameter(PARAM_NAME_PASSWORD);
-		// проверка логина и пароля
+
+		// РїСЂРѕРІРµСЂРєР° Р»РѕРіРёРЅР° Рё РїР°СЂРѕР»СЏ
 		if (LoginLogic.checkLogin(login, pass)) {
 			if (login.equals("user")) {
-				
+
 				page = ConfigurationManager.getProperty("path.page.main_user");
 			} else if (login.equals("admin")) {
 				page = ConfigurationManager.getProperty("path.page.main_admin");
@@ -25,6 +27,7 @@ public class LoginCommand implements ActionCommand {
 			request.setAttribute("errorLoginPassMessage", MessageManager.getProperty("message.loginerror"));
 			page = ConfigurationManager.getProperty("path.page.login");
 		}
+
 		return page;
 	}
 }

@@ -16,7 +16,7 @@ public enum CommandEnum {
 			this.command = new FindingsCommand();
 		}
 	};
-	
+
 	ActionCommand command;
 
 	public ActionCommand getCurrentCommand() {

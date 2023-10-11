@@ -2,23 +2,26 @@ package controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-
 public class ActionFactory {
 	public ActionCommand defineCommand(HttpServletRequest request) {
 		ActionCommand current = new EmptyCommand();
-		// извлечение имени команды из запроса
+
+		// РёР·РІР»РµС‡РµРЅРёРµ РёРјРµРЅРё РєРѕРјР°РЅРґС‹ РёР· Р·Р°РїСЂРѕСЃР°
 		String action = request.getParameter("command");
+
 		if (action == null || action.isEmpty()) {
-			// если команда не задана в текущем запросе
+			// РµСЃР»Рё РєРѕРјР°РЅРґР° РЅРµ Р·Р°РґР°РЅР° РІ С‚РµРєСѓС‰РµРј Р·Р°РїСЂРѕСЃРµ
 			return current;
 		}
-		// получение объекта, соответствующего команде
+
+		// РїРѕР»СѓС‡РµРЅРёРµ РѕР±СЉРµРєС‚Р°, СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµРіРѕ РєРѕРјР°РЅРґРµ
 		try {
 			CommandEnum currentEnum = CommandEnum.valueOf(action.toUpperCase());
 			current = currentEnum.getCurrentCommand();
 		} catch (IllegalArgumentException e) {
 			request.setAttribute("wrongAction", action + MessageManager.getProperty("message.wrongaction"));
 		}
+
 		return current;
 	}
 }

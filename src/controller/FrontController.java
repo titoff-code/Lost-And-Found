@@ -7,12 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
 public class FrontController extends HttpServlet {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -28,22 +24,22 @@ public class FrontController extends HttpServlet {
 	private void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String page = null;
-		// определение команды, пришедшей из JSP
+		// РѕРїСЂРµРґРµР»РµРЅРёРµ РєРѕРјР°РЅРґС‹, РїСЂРёС€РµРґС€РµР№ РёР· JSP
 		ActionFactory client = new ActionFactory();
 		ActionCommand command = client.defineCommand(request);
 		/*
-		 * вызов реализованного метода execute() и передача параметров
-		 * классу-обработчику конкретной команды
+		 * РІС‹Р·РѕРІ СЂРµР°Р»РёР·РѕРІР°РЅРЅРѕРіРѕ РјРµС‚РѕРґР° execute() Рё РїРµСЂРµРґР°С‡Р° РїР°СЂР°РјРµС‚СЂРѕРІ
+		 * РєР»Р°СЃСЃСѓ-РѕР±СЂР°Р±РѕС‚С‡РёРєСѓ РєРѕРЅРєСЂРµС‚РЅРѕР№ РєРѕРјР°РЅРґС‹
 		 */
 		page = command.execute(request);
-		// метод возвращает страницу ответа
-		// page = null; // поэксперементировать!
+		// РјРµС‚РѕРґ РІРѕР·РІСЂР°С‰Р°РµС‚ СЃС‚СЂР°РЅРёС†Сѓ РѕС‚РІРµС‚Р°
+		// page = null; // РїРѕСЌРєСЃРїРµСЂРµРјРµРЅС‚РёСЂРѕРІР°С‚СЊ!
 		if (page != null) {
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-			// вызов страницы ответа на запрос
+			// РІС‹Р·РѕРІ СЃС‚СЂР°РЅРёС†С‹ РѕС‚РІРµС‚Р° РЅР° Р·Р°РїСЂРѕСЃ
 			dispatcher.forward(request, response);
 		} else {
-			// установка страницы c cообщением об ошибке
+			// СѓСЃС‚Р°РЅРѕРІРєР° СЃС‚СЂР°РЅРёС†С‹ c cРѕРѕР±С‰РµРЅРёРµРј РѕР± РѕС€РёР±РєРµ
 			page = ConfigurationManager.getProperty("path.page.index");
 			request.getSession().setAttribute("nullPage", MessageManager.getProperty("message.nullpage"));
 			response.sendRedirect(request.getContextPath() + page);

@@ -5,19 +5,19 @@ package controller;
 import javax.servlet.http.HttpServletRequest;
 
 public class SessionRequestContent {
-	//private HashMap<String, Object> requestAttributes;
-	//private HashMap<String, String[]> requestParameters;
-	//private HashMap<String, Object> sessionAttributes;
+	// private HashMap<String, Object> requestAttributes;
+	// private HashMap<String, String[]> requestParameters;
+	// private HashMap<String, Object> sessionAttributes;
 
-// конструкторы
-// метод извлечения информации из запроса
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
+	// РјРµС‚РѕРґ РёР·РІР»РµС‡РµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё РёР· Р·Р°РїСЂРѕСЃР°
 	public void extractValues(HttpServletRequest request) {
-		// реализация
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	}
 
-// метод добавления в запрос данных для передачи в jsp
+	// РјРµС‚РѕРґ РґРѕР±Р°РІР»РµРЅРёСЏ РІ Р·Р°РїСЂРѕСЃ РґР°РЅРЅС‹С… РґР»СЏ РїРµСЂРµРґР°С‡Рё РІ jsp
 	public void insertAttributes(HttpServletRequest request) {
-		// реализация
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	}
 // some methods
 }
