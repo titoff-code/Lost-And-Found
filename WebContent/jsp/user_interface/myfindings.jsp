@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,53 +44,54 @@ ul.menu li a:hover {
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    text-align: center;
-    padding: 10px 0;
-    background-color: #333;
-    color: #fff;
-    width: 100%;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	padding: 10px 0;
+	background-color: #333;
+	color: #fff;
+	width: 100%;
+}
+
+table {
+	width: 80%; /* Установите желаемую ширину таблицы */
+	border-collapse: collapse; /* Объединение границ ячеек таблицы */
+}
+
+th, td {
+	border: 1px solid #000; /* Стиль границы ячеек */
+	padding: 8px; /* Отступ внутри ячеек */
+}
+
+th {
+	background-color: #f2f2f2; /* Фон заголовков столбцов */
 }
 </style>
 
 </head>
 <body>
-	 <jsp:include page="/jsp/user_interface/header.jsp" />
-	   <div class="content">
-	   <h1>Это все ваши находки:</h1>
-        <table border="1">
-        <tr>
-            <th>Заголовок 1</th>
-            <th>Заголовок 2</th>
-            <th>Заголовок 3</th>
-            <th>Заголовок 3</th>
-            <th>Заголовок 3</th>
-            <th>Заголовок 3</th>
-            <th>Заголовок 3</th>
-            <th>Заголовок 3</th>
-        </tr>
-        <% 
-        // Создайте Java-код здесь, чтобы получить данные или использовать их
-        // Например, вы можете использовать цикл для заполнения таблицы данными из списка или массива
-        for (int i = 0; i < 100; i++) {
-        %>
-        <tr>
-            <td>Данные 1</td>
-            <td>Данные 2</td>
-            <td>Данные 3</td>
-            <td>Данные 3</td>
-            <td>Данные 3</td>
-            <td>Данные 3</td>
-            <td>Данные 3</td>
-        </tr>
-        <% 
-        }
-        %>
-    </table>
-    </div>
-	 
-	 <jsp:include page="/jsp/user_interface/footer.jsp" />
+	<jsp:include page="/jsp/user_interface/header.jsp" />
+	<div class="content">
+		<h1>Это все ваши находки:</h1>
+		<table border="1">
+			<tr>
+				<th>Наименование</th>
+				<th>Описание</th>
+				<th>Дата находки</th>
+				<th>Место находки</th>
+			</tr>
+			<c:forEach var="finding" items="${myFindings}">
+				<tr>
+					<td>${myFindings.name}</td>
+					<td>${myFindings.description}</td>
+					<td>${myFindings.date}</td>
+					<td>${myFindings.location}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
+
+	<jsp:include page="/jsp/user_interface/footer.jsp" />
 
 
 

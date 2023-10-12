@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,59 +38,55 @@ ul.menu li a:hover {
 }
 
 /* Пространство для контента */
-.content {
+.finding-form {
 	margin-top: 50px; /* Отступ, чтобы контент не перекрывал меню */
 	padding: 20px;
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    text-align: center;
-    padding: 10px 0;
-    background-color: #333;
-    color: #fff;
-    width: 100%;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	padding: 10px 0;
+	background-color: #333;
+	color: #fff;
+	width: 100%;
+}
+
+form {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 10px;
+	background-color: #f9f9f9;
+}
+
+h1, h2 {
+	color: #333;
 }
 </style>
 
 </head>
 <body>
-	 <jsp:include page="/jsp/user_interface/header.jsp" />
-	   <div class="content">
-	   <h1>Все находки:</h1>
-        <table border="1">
-        <tr>
-            <th>Заголовок 1</th>
-            <th>Заголовок 2</th>
-            <th>Заголовок 3</th>
-            <th>Заголовок 3</th>
-            <th>Заголовок 3</th>
-            <th>Заголовок 3</th>
-            <th>Заголовок 3</th>
-            <th>Заголовок 100</th>
-        </tr>
-        <% 
-        // Создайте Java-код здесь, чтобы получить данные или использовать их
-        // Например, вы можете использовать цикл для заполнения таблицы данными из списка или массива
-        for (int i = 0; i < 100; i++) {
-        %>
-        <tr>
-            <td>Данные 1</td>
-            <td>Данные 2</td>
-            <td>Данные 3</td>
-            <td>Данные 3</td>
-            <td>Данные 3</td>
-            <td>Данные 3</td>
-            <td>Данные 3</td>
-        </tr>
-        <% 
-        }
-        %>
-    </table>
-    </div>
-	 
-	 <jsp:include page="/jsp/user_interface/footer.jsp" />
+	<jsp:include page="/jsp/user_interface/header.jsp" />
+	<c:forEach var="finding" items="${findingsList}">
+		<div class="finding-form">
+			<h1>Активные находки:</h1>
+			<form method="post" action="processOwnershipRequest">
+				<h2>Наименование находки: ${finding.name}</h2>
+				<p>Описание: ${finding.description}</p>
+				<p>Дата находки: ${finding.date}</p>
+				<p>Место находки: ${finding.place}</p>
+				<p>Категория находки: ${finding.category}</p>
+
+				<input type="hidden" name="findingId" value="${finding.id}">
+				<input type="button" value="Оформить право собственности"
+					onclick="openControlQuestionsForm(${finding.id})">
+			</form>
+		</div>
+	</c:forEach>
+
+
+	<jsp:include page="/jsp/user_interface/footer.jsp" />
 
 
 
