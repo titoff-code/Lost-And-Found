@@ -8,7 +8,6 @@ public class ActionFactory {
 
 		// извлечение имени команды из запроса
 		String action = request.getParameter("command");
-
 		if (action == null || action.isEmpty()) {
 			// если команда не задана в текущем запросе
 			return current;

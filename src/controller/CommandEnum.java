@@ -15,6 +15,11 @@ public enum CommandEnum {
 		{
 			this.command = new FindingsCommand();
 		}
+	},
+	GETUSERPROFILE{
+		{
+		this.command = new UserProfile();
+	}
 	};
 
 	ActionCommand command;

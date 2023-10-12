@@ -58,14 +58,21 @@ footer {
 </head>
 <body>
 	 <jsp:include page="/jsp/user_interface/header.jsp" />
+	 <form method="post" action="myprofile">
+    <input type="hidden" name="action" value="getUserProfile">
+    
+
 	 <div class="content">
 	  <h1>Профиль пользователя</h1>
   
-        <p><strong>ФИО:</strong> <%= request.getAttribute("fullName") %></p>
-        <p><strong>Email:</strong> <%= request.getAttribute("email") %></p>
-        <p><strong>Роль:</strong> <%= request.getAttribute("role") %></p>
+        <p><strong>ФИО:</strong> ${fullName}</p>
+        <p><strong>Email:</strong>  ${e_mail}</p>
+        <p><strong>Роль:</strong> ${role}</p>
+        
         <!-- Добавьте другие поля профиля, если необходимо -->
     </div>
+    <input type="submit" value="Получить профиль">
+   </form>
 	 
 	 <jsp:include page="/jsp/user_interface/footer.jsp" />
 

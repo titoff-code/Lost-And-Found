@@ -68,19 +68,19 @@ h1, h2 {
 </head>
 <body>
 	<jsp:include page="/jsp/user_interface/header.jsp" />
+	<input type="hidden" name="command" value="findings">
 	<c:forEach var="finding" items="${findingsList}">
 		<div class="finding-form">
 			<h1>Активные находки:</h1>
-			<form method="post" action="processOwnershipRequest">
+			<form method="post" action="findings">
 				<h2>Наименование находки: ${finding.name}</h2>
 				<p>Описание: ${finding.description}</p>
 				<p>Дата находки: ${finding.date}</p>
 				<p>Место находки: ${finding.place}</p>
 				<p>Категория находки: ${finding.category}</p>
 
-				<input type="hidden" name="findingId" value="${finding.id}">
-				<input type="button" value="Оформить право собственности"
-					onclick="openControlQuestionsForm(${finding.id})">
+				<input type="hidden" name="command" value="${finding.id}">
+                <input type="submit" value="Оформить право собственности">
 			</form>
 		</div>
 	</c:forEach>
