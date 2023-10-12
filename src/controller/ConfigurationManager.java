@@ -10,7 +10,6 @@ public class ConfigurationManager {
 	}
 
 	public static String getProperty(String key) {
-		System.out.print(key);
 		return resource.getString(key);
 
 	}

@@ -4,7 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<style>
+<style type="text/css">
+@charset "UTF-8";
+
 /* Общие стили для страницы */
 body {
 	margin: 0;
@@ -44,16 +46,15 @@ ul.menu li a:hover {
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    text-align: center;
-    padding: 10px 0;
-    background-color: #333;
-    color: #fff;
-    width: 100%;
+	position: absolute;
+	bottom: 0;
+	text-align: center; /* Выравниваем текст по центру */
+	padding: 10px 0; /* Внутренние отступы сверху и снизу */
+	background-color: #333; /* Цвет фона футера */
+	color: #fff; /* Цвет текста футера */
+	width: 100%;
 }
 </style>
-
 </head>
 <body>
 	 <jsp:include page="/jsp/user_interface/header.jsp" />
