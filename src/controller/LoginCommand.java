@@ -16,7 +16,7 @@ public class LoginCommand implements ActionCommand {
 
 		// проверка логина и пароля
 		if (LoginLogic.checkLogin(login, pass)) {
-			if (login.equals("user")) {
+			if (login.equals("us")) {
 
 				page = ConfigurationManager.getProperty("path.page.main_user");
 			} else if (login.equals("admin")) {
