@@ -32,6 +32,5 @@ public class FindingsCommand implements ActionCommand{
 		return page;
 	}
 	
-	
 
 }

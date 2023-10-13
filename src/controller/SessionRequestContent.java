@@ -21,5 +21,4 @@ public class SessionRequestContent {
 	}
 // some methods
 	
-	
 }

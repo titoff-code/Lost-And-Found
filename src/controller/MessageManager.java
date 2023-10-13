@@ -14,5 +14,4 @@ public class MessageManager {
 		return resource.getString(key);
 	}
 	
-	
 }

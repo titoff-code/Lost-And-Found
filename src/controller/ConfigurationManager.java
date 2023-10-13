@@ -13,4 +13,5 @@ public class ConfigurationManager {
 		return resource.getString(key);
 	}
 	
+	
 }

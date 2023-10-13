@@ -12,4 +12,5 @@ public class LoginLogic {
 		return logsAndPasswds.containsKey(enterLogin) && logsAndPasswds.get(enterLogin).equals(enterPass);
 	}
 
+	
 }

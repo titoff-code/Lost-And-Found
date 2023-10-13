@@ -10,5 +10,4 @@ public class EmptyCommand implements ActionCommand {
 	}
 	
 	
-	
 }
