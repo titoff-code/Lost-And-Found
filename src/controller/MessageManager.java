@@ -13,4 +13,6 @@ public class MessageManager {
 	public static String getProperty(String key) {
 		return resource.getString(key);
 	}
+	
+	
 }

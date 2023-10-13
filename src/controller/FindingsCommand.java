@@ -31,5 +31,7 @@ public class FindingsCommand implements ActionCommand{
 		page = ConfigurationManager.getProperty("path.page.findings");
 		return page;
 	}
+	
+	
 
 }

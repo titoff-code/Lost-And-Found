@@ -52,4 +52,6 @@ public class FrontController extends HttpServlet {
 			response.sendRedirect(request.getContextPath() + page);
 		}
 	}
+	
+	
 }

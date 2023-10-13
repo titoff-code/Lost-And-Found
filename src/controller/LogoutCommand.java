@@ -10,4 +10,6 @@ public class LogoutCommand implements ActionCommand {
 		request.getSession().invalidate();
 		return page;
 	}
+	
+	
 }

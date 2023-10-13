@@ -8,4 +8,7 @@ public class EmptyCommand implements ActionCommand {
 		String page = ConfigurationManager.getProperty("path.page.login");
 		return page;
 	}
+	
+	
+	
 }

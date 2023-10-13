@@ -20,4 +20,6 @@ public class SessionRequestContent {
 		// реализация
 	}
 // some methods
+	
+	
 }
