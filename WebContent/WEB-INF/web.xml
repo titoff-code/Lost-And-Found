@@ -47,4 +47,12 @@
     <servlet-name>JSPmyprofile</servlet-name>
     <url-pattern>/myprofile</url-pattern>
   </servlet-mapping>
+  <error-page>
+  <error-code>404</error-code>
+  <location>/jsp/error.jsp</location>
+  </error-page>
+  <error-page>
+  <exception-type>java.lang.RuntimeException</exception-type>
+   <location>/jsp/error.jsp</location>
+  </error-page>
 </web-app>
